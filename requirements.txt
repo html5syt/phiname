@@ -1,2 +1,2 @@
 flet==0.22.*
-flet-contrib==*
+flet-contrib==2024.3.6
