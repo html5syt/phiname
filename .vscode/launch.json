@@ -1,0 +1,20 @@
+{  
+    "version": "0.2.0",  
+    "configurations": [  
+        {  
+            "name": "Python: Flet App",  
+            "type": "debugpy",  
+            "request": "launch",  
+            "program": "${workspaceFolder}/main.py",  
+            "console": "integratedTerminal",  
+            "env": {  
+                // "FLASK_APP": "${workspaceFolder}/main.py",  
+                // "FLASK_ENV": "development",  
+                // "FLASK_DEBUG": "1"  
+                // 注意：FLASK_APP 和相关环境变量可能不适用于 flet，这里只是作为示例  
+                // flet 没有像 Flask 那样的直接调试支持，所以你可能需要直接运行  
+            },  
+            "justMyCode": true  
+        }  
+    ]  
+}
