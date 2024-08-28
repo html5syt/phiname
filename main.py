@@ -198,7 +198,6 @@ def main(page: ft.Page):
                 page.add(tmp)
             else:
                 delc(result)
-                copytext.expand = False
                 page.add(color_picker, result)
         else:
             if (
