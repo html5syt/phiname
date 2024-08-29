@@ -271,7 +271,7 @@ def main(page: ft.Page):
                 [
                     ft.Text("预览：", weight=ft.FontWeight.BOLD, size=30),
                     preview,
-                ]
+                ],scroll=ft.ScrollMode.HIDDEN
             ),
         ]
     )
