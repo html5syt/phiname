@@ -98,7 +98,7 @@ def main(page: ft.Page):
                     ft.TextSpan(
                         "Phigros 彩色昵称生成器",
                         ft.TextStyle(
-                            # size=20,
+                            size=15,
                             foreground=ft.Paint(
                                 gradient=ft.PaintLinearGradient(
                                     begin=ft.Offset(x=0, y=0),
@@ -184,6 +184,7 @@ def main(page: ft.Page):
         # e.visible = False
         page.update()
 
+    # 事件
     # 颜色列表更改事件
     def color_change(e):
         tmp = ft.Row([color_picker, result])
@@ -195,6 +196,10 @@ def main(page: ft.Page):
             ):
                 delc(result)
                 copytext.expand = False
+                copytext.min_lines=10
+                copytext.max_lines=10
+                copytext.width=1000
+                tmp.scroll=ft.ScrollMode.AUTO
                 page.add(tmp)
             else:
                 delc(result)
@@ -210,12 +215,16 @@ def main(page: ft.Page):
                 # color_picker.visible = False
                 page.controls.pop()
                 copytext.expand = True
+                copytext.min_lines=1
+                copytext.max_lines=5
                 page.add(result)
             else:
                 delc(color_picker)
                 copytext.expand = True
                 page.update()
 
+    # desktop：动态更改result宽度
+    
     # 组件
     # 公用
     page.add(
@@ -240,7 +249,7 @@ def main(page: ft.Page):
             "Some text",
             size=30,
             text_align=ft.TextAlign.RIGHT,
-            expand=True,
+            # expand=True,
             color=ft.colors.WHITE,
             font_family="text",
             spans=[
@@ -249,7 +258,7 @@ def main(page: ft.Page):
                     ft.TextStyle(italic=True, size=20, color=ft.colors.GREEN),
                     spans=[
                         ft.TextSpan(
-                            "bold and italic",
+                            "bold and italic顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶ffdsdfghfdfsfsfgssgsgdsgsdgsdgsdgdgs",
                             ft.TextStyle(weight=ft.FontWeight.BOLD),
                         ),
                         ft.TextSpan(
@@ -271,7 +280,8 @@ def main(page: ft.Page):
                 [
                     ft.Text("预览：", weight=ft.FontWeight.BOLD, size=30),
                     preview,
-                ],scroll=ft.ScrollMode.HIDDEN
+                ],
+                scroll=ft.ScrollMode.AUTO,
             ),
         ]
     )
