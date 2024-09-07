@@ -23,6 +23,7 @@ env:
   FLUTTER_VERSION: 3.24.0
   PROJECT_NAME: PhiName
   ORG_NAME: com
+  PRODUCT_NAME: PhiName
 
 jobs:
   build-linux:
@@ -163,12 +164,12 @@ jobs:
       uses: actions/setup-java@v4.2.1
       with:
         distribution: 'temurin'
-        java-version: '18'
+        java-version: '17'
 
     - name: Flet Build aab
       run: |
         flutter config --no-analytics
-        flet build aab --verbose --build-number=$BUILD_NUMBER --build-version=$BUILD_VERSION --project=$PROJECT_NAME --org=$ORG_NAME --template-dir /home/runner/work/phiname/phiname/flet-build-template
+        flet build aab --verbose --build-number=$BUILD_NUMBER --build-version=$BUILD_VERSION --project=$PROJECT_NAME --product=$PRODUCT_NAME --org=$ORG_NAME --template-dir /home/runner/work/phiname/phiname/flet-build-template
 
     - name: Upload aab Artifact
       uses: actions/upload-artifact@v4.3.4
@@ -205,12 +206,12 @@ jobs:
       uses: actions/setup-java@v4.2.1
       with:
         distribution: 'temurin'
-        java-version: '21'
+        java-version: '17'
 
     - name: Flet Build APK
       run: |
         flutter config --no-analytics
-        flet build apk --verbose --build-number=$BUILD_NUMBER --build-version=$BUILD_VERSION --project=$PROJECT_NAME --org=$ORG_NAME --template-dir /home/runner/work/phiname/phiname/flet-build-template
+        flet build apk --verbose --build-number=$BUILD_NUMBER --build-version=$BUILD_VERSION --project=$PROJECT_NAME --product=$PRODUCT_NAME --org=$ORG_NAME --template-dir /home/runner/work/phiname/phiname/flet-build-template
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4.3.4
