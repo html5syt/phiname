@@ -159,6 +159,12 @@ jobs:
       with:
         flutter-version: ${{ env.FLUTTER_VERSION }}
 
+    - name: Setup Java JDK
+      uses: actions/setup-java@v4.2.1
+      with:
+        distribution: 'temurin'
+        java-version: '18'
+
     - name: Flet Build AAB
       run: |
         flutter config --no-analytics
